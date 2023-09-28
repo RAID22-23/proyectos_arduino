@@ -5,7 +5,7 @@ int amarillo = 11;
 int rojo = 12;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600);  // for debugging purposes
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(verde, OUTPUT);
   pinMode(amarillo, OUTPUT);
@@ -16,10 +16,9 @@ void setup() {
 void loop() {
   digitalWrite(verde, HIGH);  // turn the LED on (HIGH is the voltage level)
   Serial.println("Led verde encendido");
-  delay(20000);                    // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);  // turn the LED off by making the voltage LOW
+  delay(20000);              // wait for 20 seconds
+  digitalWrite(verde, LOW);  // turn the LED off by making the voltage LOW
   Serial.println("Led verde apagado");
-
 
   for (int i; i <= 3; i++) {
     digitalWrite(verde, HIGH);  // turn the LED on (HIGH is the voltage level)
@@ -27,17 +26,18 @@ void loop() {
     delay(1000);               // wait for a second
     digitalWrite(verde, LOW);  // turn the LED off by making the voltage LOW
     Serial.println("Led verde apagado");
-    delay(1000);
+    delay(1000);  // wait for a second
   }
+
   digitalWrite(amarillo, HIGH);  // turn the LED on (HIGH is the voltage level)
   Serial.println("Led amarillo encendido");
-  delay(10000);                 // wait for a second
+  delay(10000);                 // wait for 10 seconds
   digitalWrite(amarillo, LOW);  // turn the LED off by making the voltage LOW
   Serial.println("Led amarillo apagado");
 
   digitalWrite(rojo, HIGH);  // turn the LED on (HIGH is the voltage level)
   Serial.println("Led rojo encendido");
-  delay(20000);                 // wait for a second
+  delay(20000);             // wait for 20 seconds
   digitalWrite(rojo, LOW);  // turn the LED off by making the voltage LOW
   Serial.println("Led rojo apagado");
 }
